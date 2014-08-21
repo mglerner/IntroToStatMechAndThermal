@@ -17,4 +17,12 @@ Required supplemental text: Gould and Tobochnik's [Thermal and Statistical Physi
 [GandTComp]: http://www.compadre.org/STP/filingcabinet/share.cfm?UID=10986&FID=21201&code=8E844C06A4 "comPADRE site for Gould and Tobochnik"
 
 
+## Guest Lectures ##
 
+### Diffusion ###
+
+Team up with Adam Hoppe again
+
+### Elastic Network Model/Normal Mode Analysis ###
+
+Guest lecture from Demian Riccardi
