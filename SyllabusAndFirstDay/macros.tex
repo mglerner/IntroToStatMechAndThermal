@@ -1,0 +1,97 @@
+%% Document setup for Syllabus and HW
+
+\textwidth=7in
+\textheight=9.5in
+\topmargin=-1in
+\headheight=0in
+\headsep=.5in
+\hoffset  -.85in
+
+\usepackage{amsmath} % for \text{}
+\usepackage{amsfonts} % For \text{}
+\usepackage{amssymb} % For \text{}
+\usepackage{minibox} % for newlines in framebox
+\usepackage{framed}
+
+%% Stolen from Nathan Baker
+\newcommand{\erf}{{\mathrm{erf}}}
+\newcommand{\erfc}{{\mathrm{erfc}}}
+\newcommand{\erfi}{{\mathrm{erfi}}}
+\newcommand{\argh}{{\mathrm{arg}}}
+\newcommand{\atan}{{\mathrm{atan}}}
+\newcommand{\acos}{{\mathrm{acos}}}
+\newcommand{\asin}{{\mathrm{asin}}}
+\newcommand{\mat}[1]{\,\underline{\underline{#1}}\,}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\order}[1]{{\mathcal{O}} \left( #1 \right)}
+\newcommand{\op}[1]{{\mathcal{#1}}}
+\newcommand{\myfile}[1]{\texttt{#1}}
+\newcommand{\myvar}[1]{\textsf{#1}}
+\newcommand{\mean}[1]{{\left\langle {#1} \right\rangle}}
+
+% The master boolean -- set this to "masterfalse" or "mastertrue"
+%\newif\ifmaster \masterfalse
+\newif\ifmaster \mastertrue
+
+\newcommand{\hidesolution}[1]{ \ifmaster { {#1} } \else { {Go to class.} } \fi }
+\newcommand{\hideanswer}[1]{ \ifmaster { #1 } \else {} \fi }
+\newcommand{\solution}[1]{ \begin{proof}[Solution] \hidesolution{#1} \end{proof} }
+\newcommand{\answer}[1]{ \hideanswer{\begin{proof}[Answer] #1 \end{proof}} }
+
+%% MGL
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\vect}[1]{\,\vec{\mathbf{#1}}\,}
+\usepackage{tabularx}
+
+%% Related to termcal package
+
+\usepackage{termcal}
+% Examples from  https://sites.google.com/site/mattmastin/teaching/grsc-7700/latex-templates
+
+\renewcommand{\arraystretch}{2}
+
+
+% Few useful commands (our classes always meet either on Monday and Wednesday 
+% or on Tuesday and Thursday)
+
+\newcommand{\MWClass}{%
+\calday[Monday]{\classday} % Monday
+\skipday % Tuesday (no class)
+\calday[Wednesday]{\classday} % Wednesday
+\skipday % Thursday (no class)
+\skipday % Friday 
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\TRClass}{%
+\skipday % Monday (no class)
+\calday[Tuesday]{\classday} % Tuesday
+\skipday % Wednesday (no class)
+\calday[Thursday]{\classday} % Thursday
+\skipday % Friday 
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\MThClass}{%
+\calday[Monday]{\classday} % Monday
+\skipday % Tuesday (no class)
+\skipday % Wednesday (no class)
+\calday[Thursday]{\classday} % Thursday
+\skipday % Friday
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\MThFClass}{%
+\calday[Monday]{\classday} % Monday
+\skipday % Tuesday (no class)
+\skipday % Wednesday (no class)
+\calday[Thursday]{\classday} % Thursday
+\calday[Friday]{\classday} % Friday
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\Holiday}[2]{%
+\options{#1}{\noclassday}
+\caltext{#1}{#2}
+}

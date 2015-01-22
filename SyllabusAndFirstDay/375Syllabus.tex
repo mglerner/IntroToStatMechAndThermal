@@ -1,0 +1,830 @@
+%http://physics.weber.edu/schroeder/whoandwhy.html
+
+% good blog for python MC http://blog.smellthedata.com/
+
+% http://www.physics.rutgers.edu/ugrad/351/ is a nice syllabus for a
+% 2day/wk class.
+
+% and another
+% http://www.physics.umd.edu/studinfo/courses/Phys404/einstein/fall12/syllabus.html
+
+% site with exams,
+% etc. http://www.colorado.edu/physics/phys4230/phys4230_sp03/index.html 
+
+% Recommended problems http://physics.weber.edu/thermal/recprobs.html
+
+% Course plans http://physics.weber.edu/thermal/courseplans.html
+
+% http://pages.physics.cornell.edu/~sethna/StatMech/
+
+% http://www.physics.utah.edu/~rogachev/7310/7310.htm
+
+% http://webcache.googleusercontent.com/search?q=cache:http://nile.physics.ncsu.edu/py722/f09/
+
+% http://pubs.acs.org/doi/abs/10.1021/ci300470t
+
+% http://jcp.aip.org/resource/1/jcpsa6/v137/i23/p234104_s1?isAuthorized=no
+
+% http://www.technologyreview.com/view/429561/the-measurement-that-would-reveal-the-universe-as-a-computer-simulation/
+
+% http://ipparco.roma1.infn.it/~giovanni/gpub.html#E
+
+% iPhone MD http://mason.gmu.edu/~bkim14/i2dmd.htm
+
+% Negative Temperature Baez
+% https://plus.google.com/117663015413546257905/posts/KTeKM6SffYT
+% and http://math.ucr.edu/home/baez/physics/ParticleAndNuclear/neg_temperature.html
+
+% From Baez:
+% I've never taught thermodynamics and stat mech, but if I did I'd want
+% to take a modern approach starting with a little probability theory,
+% then going to statistical mechanics via the maximum entropy principle,
+% and then to thermodynamics.   
+% 
+% I think most students hate the technicalities that dominate
+% thermodynamics before one explains the subject using stat mech: the
+% pile of concepts like entropy, Gibbs free energy and enthalpy, and the
+% Maxwell relations tying them all together, seem unintuitive and hard
+% to remember.   It would be much nicer to start with the entropy of a
+% probability distribution, argue that it's a measure of 'information we
+% don't know', and say that the basic principle in any situation is to
+% choose the maximum entropy probability distribution consistent with
+% our knowledge.  Getting from here to the Maxwell distribution and then
+% the ideal gas laws could be quite inspiring! 
+% 
+% But, having never tried this with students, much less undergraduates,
+% I can't say how to make it work.  Putting in too much math or too much
+% philosophy might backfire. 
+% 
+% And since I've never written about fluctuation-dissipation theorems, I
+% can never remember how they fit together: the reason I write so much
+% is that I can only work out a clear picture of a subject by trying to
+% explain it.  That's when I notice all the gaps in my understanding. 
+% 
+% So, all I can say is: please make your course notes available to the world!
+
+
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{macros}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{empty}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\begin{document}
+
+\begin{center}
+{\bf Physics 375: Thermal \& Statistical Physics; T$\Theta$ 10:30AM-12:00PM; Dennis 305
+}
+\end{center}
+
+\setlength{\unitlength}{1in}
+
+\hrule
+
+\vskip.15in
+\noindent\textbf{Instructor:} Michael Lerner,  Dennis 221, Phone: 727-LERNERM
+\vskip.15in
+\noindent\textbf{Office Hours:} T 9-10, $\Theta$ 1:30-3:30 and by  appointment. I also have an open-door policy, and you're
+encouraged to stop in to ask questions whenever my door is open. That's
+most of the time. 
+
+
+\vskip.25in
+\begin{description}
+\item[Course goals]\ \\\vspace{-.3in}
+\begin{itemize}
+  \item Students will understand the basics of thermal physics: how do macroscopic quantities such as temperature relate to each other?
+  \item Students will understand the statistical underpinnings of thermal physics from a molecular level, including foundational topics and modern formulations of the second ``law'' of thermodynamics.
+  \item Students will understand and apply the concepts of statistical and thermal physics to a topic in their area of interest.
+  \item Students will explore the wide range of applications of statistical mechanics by developing a Monte Carlo model to simulate and evaluate March Madness brackets.
+\end{itemize}
+\item[Required Textbook:] Schroeder, \textbf{Thermal Physics} It's extremely readable, and has a good selection of
+real-world problems.
+\item[Prerequisite] Physics 345, modern physics.
+\item[Grading Policy]\ \\\vspace{-.3in}
+\begin{itemize}
+  \item Class preparation/participation, Moodle/Piazza participation: 10\%
+  \item Three in-class labs, each 4\%
+  \item Two midterms, each 9\%, for a total of 18\%
+  \item One final, 15\%
+  \item Independent project, 10\%
+  \item Homework, 35\%
+\end{itemize}\vspace{-.2in}
+\item[Attendance Policy:] Students are expected to attend classes regularly. A student who incurs an excessive
+number of absences may have some or all of the class preparation/participation grade (10\%) deducted at the discretion of the instructor.
+\item[Piazza:] http://piazza.com/earlham/spring2015/phys375
+\item[Academic Integrity:] {\small http://www.earlham.edu/policies-and-handbooks/community/student-code-of-conduct/}
+\end{description}
+\noindent\textbf{Important Dates}:
+\begin{center} \begin{minipage}{5in}
+\begin{flushleft}
+Drop Deadline \dotfill 4/3/2015\\
+Project Topics Due \dotfill 4/7/2015\\
+First exam \dotfill 2/17/2015\\ 
+Second exam \dotfill 4/14/2015\\ 
+Final Exam, Comprehensive emphasis on later topics \dotfill 5/4/2015\\
+\end{flushleft}
+\end{minipage}
+\end{center}
+
+\pagebreak
+\noindent\textbf{Class time} There will be two class meetings
+each week. The class meetings will generally consist of lectures,
+discussion of assignments, and student presentation of assigned
+problems. The longer meetings will allow us to work through longer
+computational exercises in class.
+
+It is very important that you study the appropriate text assignments
+before coming to class. I will repeat and re-emphasize material from
+the book, but you'll find that you understand and internalize the
+material much better if the class discussion is your second
+exposure. In this class, in particular, there is a huge variety of
+applied problems that we'd love to discuss. The more you've read
+before class, the more we can delve into new material in class.
+
+\textbf{You are required to post to the Piazza site by 9PM the day
+  before class.} Your post should include what you thought was most
+interesting and important from the reading. You should mention any
+parts of the reading that were particularly hard to understand. You
+can also comment to ask a question or answer someone else's question
+in lieu of mentioning the most interesting/important things.
+This
+counts for \textbf{HALF} of your reading/participation grade! 
+
+\vskip.05in\noindent\textbf{Homework} As you surely know by now, your understanding will be
+significantly greater if you work problems throughout the week rather
+than saving them all for Sunday night. So, homework will be assigned
+each class period. You are actively encouraged to work cooperatively on
+them. \textbf{Understanding someone else's solution to a problem is not
+  nearly as useful as being able to solve the problem yourself.}
+Therefore, I ask that you attempt each problem on your own before
+discussing it with your peers. You may then compare answers and
+discuss strategies, but the solution you turn in should be written
+entirely by you. If you are using online solutions as part of your
+study, you should inform me so that we can work out guidelines for
+such usage.
+
+Several of the problems assigned in this class are
+quite challenging. Others are rote computation. For the more
+challenging problems, my goal is to have you make the strongest
+possible effort towards \textbf{understanding} the solution. Thus, if
+you cannot fully solve the problem, say whatever you can about the way
+in which a solution would proceed from where you stop; say what
+you can about the qualitative behavior of a solution; say what you
+can about the physical meaning of the solution. 
+
+\textbf{Due dates} Homework assigned on Thursday is due at the start
+of class the following Tuesday. Homework assigned on Tuesday is due at
+5:00 PM (in the box outside my office) on Friday.
+
+\textbf{Resubmission} If you get a homework problem wrong, you may
+redo it for half of the missed credit. If you choose this option, you
+must have a friend grade it (using the solution set in the library)
+and then submit the re-graded work to me. The goal here is to
+encourage you to keep thinking about these problems until you
+understand them while still giving credit to work done on
+time. Resubmissions can be turned in any time before the final.
+
+\textbf{Late work} In an ideal world, all homework would be done on
+time.  We seem not to inhabit that world, so how will I deal with late
+homework?
+
+1) On the due date, submit something – whatever you have done, even if
+it’s only a few problems.  You may then submit additional work late.
+However, unless you submit something on the due day, your late work
+won’t be accepted at all. Solutions will be available in the library
+as soon as the homework is due. If you consult these while completing
+late work (A) you must mention that fact on your assignment (B) you
+must use ``real'' late days, no the ten ``free'' late days described
+below.
+
+2) The part of the homework that is submitted late will penalized; later work $\Rightarrow$ larger penalty. 
+
+3) During the semester your have 10 free ``late days'' for homework.
+Don't use them early in the semester for frivolous reasons; you may
+need them toward the end of the semester.   
+
+4) Each student has a maximum of 20 late days.  Once you’ve used those
+up, your homework will not be accepted unless it’s on time. Please put
+a date on any work you submit.  Late penalties are usually 10\% per
+day late, with Saturday/Sunday counting as one ``day.''   Homework
+that is more than 1 week late generally will not be accepted for
+grading.
+
+
+
+\newpage
+Homework problems will be graded on roughly the same scale as used in
+Physics 125 and 235:
+
+\begin{description}
+  \item[5] Solution is complete and well-written
+  \item[4] Solution is missing minor parts or some important explanations
+  \item[3] Solution is missing major parts and/or has few if any explanations
+  \item[2] At least one major portion of the problem correct
+  \item[1] Very little coherent initial effort was expended
+  \item[0] No initial solution was submitted
+\end{description}
+
+\vskip.25in\noindent\textbf{Books and Resources}
+\begin{description}
+\item[Additional Textbooks]
+ \hfill \\
+\textbf{Gould and Tobochnik, Statistical and Thermal Physics} It was a
+close decision between this and Schroeder. I went with Schroeder for
+several reasons, but this book is free and good.
+http://www.compadre.org/stp/
+\\
+\textbf{An Introduction to Statistical Mechanics and Thermodynamics} An 
+extremely well-written modern introduction. Paced a bit faster than we'll go,
+this would be a good intro grad text, or 475-level text.
+\\
+\textbf{Sethna, Entropy, Order Parameters, and Complexity}
+This is a freely-available, modern, advanced, applied statistical
+mechanics textbook. Its main strengths include the broad range of
+problems (statistical mechanics, in its modern form, is an extremely
+broad, applied subject) and the extremely up-to-date content. You can
+download it from Sethna's website
+(http://www.lassp.cornell.edu/sethna/). On the other hand, it has a
+reputation as a book that's ``fantastic if you already know the
+subject matter'' but difficult to learn from on your own at the
+advanced undergraduate level. The plan is to supplement Schroeder with
+bits and pieces of Sethna. Please start pawing through Sethna ASAP so
+that you can pick out interesting topics that we may use. \hfill \\
+\item[Required Software] \hfill\\
+\textbf{The Anaconda Python Distribution}
+We'll do several computational exercises throughout the class. If you
+have a laptop, please install the Anaconda Python Distribution. If you do not
+have a laptop, please contact me ASAP. 
+http://continuum.io/downloads
+\item[Recommended Textbooks] \hfill \\
+\textbf{Kusse and Westwig, Mathematical Physics}
+This text is extremely well written. It's a good reference for the
+math you may have forgotten. \\
+\textbf{Schey, div grad curl and all that}
+This is an extremely conversational introduction to/refresher on
+vector calculus. \hfill \\
+\textbf{Bridging the Vector Calculus Gap} This is a fantastic resource
+for vector calculus that focuses on actually using the material in
+practice, rather than just learning it in a mathematical
+context. http://www.math.oregonstate.edu/bridge/ 
+\\
+\textbf{Styer, Statistical Mechanics} I just found this recently, but
+it looks like a nice attempt at integrating modern material into a
+Stat Mech course. Note that it is not yet a complete
+book. http://www.oberlin.edu/physics/dstyer/StatMech/book.pdf
+\end{description}
+
+\vskip.25in\noindent\textbf{Labs} Statistical Mechanics is one of the most
+active areas of modern physics research, and we'll supplement the
+class with at least three labs:
+
+\begin{description}
+\item[Diffusion] Statistical mechanics is also concerned with
+  predicting diffusion constants of grains of pollen floating on water
+  (think Einstein's famous 1905 paper) or proteins moving about in
+  cell membranes. We will team up with Adam Hoppe at South Dakota
+  State University to use a web-controlled TIRF (total internal
+  reflection) microscope to measure the diffusion constant of
+  individual lipids (actually, we'll be looking at quantum dots
+  attached to lipids) in cell membranes. This will give us a way of
+  calculating Boltzmann's constant. This lab is also of interest to
+  biochemistry students, so I've invited several of them to watch and
+  perhaps participate.
+\item[Non-equilibrium Statistical Mechanics] Think for a minute about
+  moving your hand around under water. If you move your hand
+  infinitely slowly (called ``quasistatically''), you would say that
+  the work required to move your hand from one place (state $A$) to
+  another (state $B$) is equal to the free energy difference between
+  $A$ and $B$. What if you move your hand quickly? Until very recently
+  (1997), the most definite general answer we could give is that the
+  work required would be greater than or equal to the free energy
+  difference (you'd burn up some energy in friction), but performing
+  several non-equilibrium processes like this would not be able to
+  tell you exactly the free energy difference between $A$ and $B$. In
+  this lab, we will study one of the most shocking results of
+  statistical mechanics, the Jarzynski equality, which allows us to
+  average \textit{nonequilibrium} processes to determine the exact
+  energy difference between two \textit{equilibrium} states. This lab
+  involves computer simulations of proteins, and will be done in two
+  parts, separated by several weeks.
+\item[Entropy of Unknotting] In this lab, we will model the unknotting
+  of a small beaded chain via random walks, and make both quantitative
+  and qualitative measurements of the entropy involved of unknotting.
+\end{description}
+
+The entropy of unkotting is a self-directed lab. You may begin it at
+any point after spring break.
+
+
+\vskip.25in\noindent\textbf{Tests}  All will be self-scheduled exams, to be picked
+up and turned in at the front desk of the science library. 
+
+\newpage
+\vskip.25in\noindent\textbf{Independent project} The applications of modern
+statistical mechanics are so broad that we cannot hope to cover even a
+reasonable sampling of them in a single course. However, I don't want
+you to miss out on the parts that happen to be most interesting to
+you. Therefore, you'll each pick either an interesting problem to
+model or an interesting technique to learn. You'll write a short paper
+and present the results to the class. You'll be expected to start on
+this halfway through the semester, and we'll discuss it in more detail
+at that point. Sethna's book provides a wealth of such problems, and
+I'm certainly available to provide background material that you may be
+missing if needed.
+
+Topics are largely at your discretion, but may include
+
+\begin{itemize}
+  \item Information Theory and Statistical Mechanics
+  \item Foundations of the Zeroth and Second ``Laws'' of
+    thermodynamics
+  \item Coarsening
+  \item Time correlation functions
+  \item Statistical Mechanics/Thermodynamics of small systems
+  \item Further work with Monte Carlo simulations
+  \item Thermal ratchets, theory and practice
+  \item Order parameters and critical exponents (often an in-class
+    topic!, see Sethna)
+\end{itemize}
+
+\vskip.25in\noindent\textbf{Course Outline} 
+
+My plan is to move fairly quickly through the first part of the book,
+assuming it's mostly review. Later sections are up for discussion:
+should we spend more time on heat engines, or more time on statistical
+mechanics and applications?
+
+In any case, we'll be doing several computational simulations
+throughout. In order to make things standard, we'll do them all in
+Python.
+
+In addition to the focus on simulation, we'll focus more on
+statistical mechanics than on thermodynamics, so we will skip straight
+from Chapter 3 to Chapter 6, giving us time to set up Monte Carlo
+simulations of March Madness. The syllabus is fairly flexible, but we
+need to get to MD simulations \textit{before} March, and we need to
+get through diffusion before the lab is scheduled. I expect this class
+to be a lot of work, and an enormous amount of fun.
+
+% Plan: Ch. 1, Ch.2, Ch. 3, Section 6.1, Section 6.2, Section 8.2
+
+\newpage
+%\vskip.25in\noindent\textbf{Daily Schedule}
+\newcounter{hw}
+\setcounter{hw}{1}
+\newcounter{lab}
+\setcounter{lab}{1}
+\begin{calendar}{1/12/2015}{17} 
+  % Semester starts on 1/16/2013 and last for 14 class weeks. You must
+  % always start on a Monday, even if the first day is not a
+  % Monday. Use holidays to make up the difference.
+\setlength{\calboxdepth}{.3in}
+\setlength{\calwidth}{7in}
+\TRClass
+
+% Things that are missing
+
+% Holidays
+\caltexton{8}{\framebox{\textbf{Guest Lecture}}}
+\caltexton{21}{\begin{framed}{\bf Project Topics Due}\end{framed}}
+\caltexton{22}{\begin{framed}{\bf Project Paragraph Due}\end{framed}}
+
+\Holiday{1/12/2015}{Winter break}
+\Holiday{1/13/2015}{Winter break}
+\Holiday{2/19/2015}{\textit{Early Semester Break\\yay!!!}}
+\Holiday{2/20/2015}{\textit{Early Semester Break\\yay!}}
+\Holiday{2/21/2015}{\textit{Early Semester Break\\yay!}}
+\Holiday{2/22/2015}{\textit{Early Semester Break\\yay!}}
+
+\Holiday{3/14/2015}{\textit {Spring Break}}
+\Holiday{3/15/2015}{\textit {Spring Break}}
+\Holiday{3/16/2015}{\textit {Spring Break}}
+\Holiday{3/17/2015}{\textit {Spring Break}}
+\Holiday{3/18/2015}{\textit {Spring Break}}
+\Holiday{3/19/2015}{\textit {Spring Break}}
+\Holiday{3/20/2015}{\textit {Spring Break}}
+\Holiday{3/21/2015}{\textit {Spring Break}}
+\Holiday{3/22/2015}{\textit {Spring Break}}
+
+\Holiday{5/2/2015}{Reading Day} 
+\Holiday{5/3/2015}{Reading Day} 
+\Holiday{5/4/2015}{Finals: comprehensive but with emphasis on
+  later topics} 
+\Holiday{5/5/2015}{Reading Day} 
+\Holiday{5/6/2015}{Finals} 
+\Holiday{5/7/2015}{Finals} 
+% ... and so on
+
+\caltext{4/3/2015}{\framebox{Last day to drop}}
+\caltext{5/1/2015}{\framebox{Last class}}
+% ... and so on
+
+\caltext{4/5/2015}{\framebox{\bf{Last day to drop}}}
+\caltext{5/2/2015}{\framebox{\bf{Last day}}} % last day is may 3
+\caltext{4/8/2015}{\framebox{\bf{Second test}}}
+\caltext{3/24/2015}{\begin{framed}
+      \bf{You may begin Lab  \#\arabic{lab}\stepcounter{lab}:
+        Entropy of }
+      \bf{Unknotting at any point after this}
+      \bf{lecture.}
+\end{framed}}
+
+\caltext{2/17/2015}{\begin{framed}
+    \bf{First test through \S6.2}
+\end{framed}}
+
+\caltext{4/14/2015}{\begin{framed}\bf{Second test}\end{framed}}
+
+
+\caltexton{1}{
+Read through Schroeder p. 28 (\S 1.1-1.4) 
+\\\line(1,0){3}\\
+  What is Statistical Physics?; Thermal equilibrium; Microscopic model of ideal gas; equipartition theorem; heat and work 
+\\\line(1,0){3}\\
+Problems in class: 1.4, 1.14, 1.18 
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: 1.7(a), 1.8, % section 1.1
+    1.16, 1.17, 1.20 % section 1.2
+}
+
+\caltextnext{
+Read through Schroeder p. 48 (\S 1.5-1.7)
+\\\line(1,0){3}\\
+  Compressive work; Heat capacities;
+      Rates of processes
+\\\line(1,0){3}\\ 
+Problems in class: 1.37, 1.45
+\\\line(1,0){3}\\ 
+HW \#\arabic{hw}\stepcounter{hw}:
+      1.22 (a,b,c,e - give radius), \\ % section 1.2    
+      1.31, 1.34, 1.36, % section 1.5 
+      1.43 %section 1.6
+}
+
+\caltextnext{
+Read through p. 59 (\S 2.1-2.3)
+\\\line(1,0){3}\\
+Two-State Systems; Einstein model of a solid; Interacting systems
+\\\line(1,0){3}\\
+Problems in class: Class choice
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: 2.4, 2.5, 2.6, 2.8
+}
+
+\caltextnext{
+Read through p. 73(\S 2.4-2.5) 
+\\\line(1,0){3}\\
+Large Systems; Ideal Gas
+\\\line(1,0){3}\\
+Problems in class: One of the below. Class votes.
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}:  2.11, 2.16, 2.17, 2.18, 2.19, 2.21
+}
+
+\caltextnext{
+Read through p. 92 (\S 2.6, 3.1)
+\\\line(1,0){3}\\
+ENTROPY!; Temperature
+\\\line(1,0){3}\\
+Problems in class: class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: 2.29, 2.31, 2.33, 2.35, 2.37
+}
+
+\caltextnext{
+Read through p. 107 (\S 3.2, 3.3)
+\\\line(1,0){3}\\
+Entropy and Heat; Paramagnetism
+\\\line(1,0){3}\\
+Problems in class: class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: 2.38, 3.3, 3.6, 3.13, 3.14\\
+Additional problem from class.
+}
+
+\caltextnext{
+Read through p. 121 (\S 3.4, 3.5, 3.6)
+\\\line(1,0){3}\\
+Mechanical Equilibrium and Pressure; Diffusive
+      Equilibrium and Chemical Potential
+\\\line(1,0){3}\\
+Problems in class: class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: 3.24, 3.30, 3.32, 3.35, 3.36a
+}
+
+\caltextnext{
+Read through p. 220-237 (\S 6.1-6.2)
+\\\line(1,0){3}\\
+The Boltzmann Factor, Average values
+\\\line(1,0){3}\\
+Problems in class: class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: 6.3 (it's easier to define some
+dimensionless variable $t=kT/\epsilon$ and plot $Z(t)$), 6.4, 6.11, 6.12, 6.13,
+6.22ab\\Extra Credit: the rest of 6.22 (we'll do the rest of the
+problem in class, so you can earn extra credit only by bringing this
+to class finished)
+}
+
+% Here's the IPython notebook from class:
+% http://nbviewer.ipython.org/url/mglerner.com/375/Basic%2520Python%2520Intro%2C%2520Starting%2520on%2520Monte%2520Carlo.ipynb 
+
+% The homework is to work your way through everything up to and
+% including the "More on Lists" section of
+% http://en.wikibooks.org/wiki/Non-Programmer%27s_Tutorial_for_Python_2.6 
+
+% See MonteCarlo/Ising/Schroeder_2d_ising.py
+
+% See HW 11 NB before HW 10.
+
+\caltextnext{
+Read through p. 327-356 (\S 8.2)
+\\\line(1,0){3}\\
+Ising models
+\\\line(1,0){3}\\
+Problems in class: class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: 8.15, 8.17, 8.25, 8.26\\ March
+Madness 1.1, 1.2, 1.3 (see website)
+}
+
+% MGL more information about Ising models!
+% Skip 8.1 entirely
+\caltextnext{
+Read additional assigned material (Ising.pdf) and \S8.2
+\\\line(1,0){3}\\
+Continue \S8.2, more about MC; MC Pi estimation, Monte Carlo Simulation Coding;
+      March Madness code.
+\\\line(1,0){3}\\
+Problems in class: 8.27, simple MC simulations
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: Finish MC code \\
+March Madness 2.1, 2.2 (see website)
+}
+
+% http://www.mglerner.com/blog/?p=16
+%
+%You log in by going to: http://statmech.mayhem.cbssports.com/e?ttag=13_cbspaste
+%
+%I've made accounts for each of you.
+%
+%Aislinn: your "official" email account is earlham.statmech.1@gmail.com ... the password for the email account, for your CBS Sports Account, and for the Stat Mech bracket pool are all "Boltzmann" (no quotes).
+%
+%Jacor: your "official" email account is earlham.statmech.2@gmail.com .. same password as above.
+%
+%David: earlham.statmech.3
+%
+%Justin: earlham.statmech.4
+%
+%
+% - Does it behave as expected if you vary Temperature, etc.?
+% - Make up some new energy functions. Make at least one based on rankings that you find on the web somewhere. If you write your energy function properly, you can plug in things like "team strength" instead of ranking (e.g. you could go to kenpom.com and plug in the numbers from the "Pyth" column).
+%- How often does the 2nd place team win for different energy functions and different temperatures (see the new "printwinpercentages" function)
+%
+%And a relatively fast homework problem: we all understand the Metropolis algorithm by now. The code for the playgame function was actually *more* complicated when I used it directly. We discussed making moves in bracket space. The Metropolis algorithm is well-suited to this: we take a bracket, consider the potential impacts of flipping a certain game, and let the Metropolis algorithm tell us whether or not to flip the game.
+%
+%However, at the current time, we're just trying to generate a single bracket. In this case, we just want to play a bunch of individual games. If you let Pa be the probability that team "a" wins, and Pb be the probability that team "b" wins, (1) what's the ratio of Pa to Pb? (2) what's Pa? (3) does the attached code match your answer from part 2?
+%
+%And, just for fun, here's one more version of the code. If you're playing around with it, you may find it easier to pass temperature as an argument to the various functions, rather than setting it directly. So, the attached version has two changes
+%
+%1) Temperature is now an argument, rather than a global variable.
+%2) The code at the end is all under a magic-seeming line that reads "if __name__ == '__main__'". That's a bit of Python magic that makes the code run only if it's executed from the command line, by clicking on the file, or by typing "run MonteCarloBrackets5.py" in iPython.
+
+% Also look for ExtractKenpomData.py
+
+\caltextnext{
+Read through p. (\S 1.7)
+\\\line(1,0){3}\\
+Diffusion, rates
+\\\line(1,0){3}\\
+Problems in class: class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: 1.56, 1.68 (hint: you can make life
+easier by reading page 47 and assuming that the perfume has spread to
+half of the room), report on one
+interesting topic from Sethna.
+\\Extra credit: 1.57
+}
+
+\caltextnext{
+{\bf Read lab handout} % MGL: Brownian motion boltzman constant.pdf
+                       % and BoltzmannAndDiffusion.pdf
+\\\line(1,0){3}\\
+{\bf Lab \#\arabic{lab}\stepcounter{lab}: Diffusion\& modern microscopy}
+\\\line(1,0){3}\\
+Problems in class: start analysis!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: finish analysis
+}
+
+\caltextnext{
+Read through p. 149-165 (\S 5.1-5.2)
+\\\line(1,0){3}\\
+Free energy available as work; Free Energy as a force towards equilibrium
+\\\line(1,0){3}\\
+Problems in class: 5.7, class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: 5.4, 5.8, 5.9, 1.40
+}
+
+\caltextnext{
+Read through p. 122-148 (\S 4.1-4.4)
+{\bf More than most days, you must have done the reading ahead of class}
+\\\line(1,0){3}\\
+      Heat Engines and Refrigerators (\S4.1-4.2) \\
+      For discussion, but not as important: \S 4.3-4.4
+\\\line(1,0){3}\\
+Problems in class: class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: 4.7, 4.8, 4.12, 4.14
+}
+
+\caltextnext{
+{\bf Read lab handout} 
+\\\line(1,0){3}\\
+{\bf Lab \#\arabic{lab}\stepcounter{lab}: Simulation of free energy 1}
+\\\line(1,0){3}\\
+Problems in class: lab!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: Finish lab!
+}
+
+\caltextnext{
+Read through p. 166-185 (\S 5.3)
+\\\line(1,0){3}\\
+Phase Transformations of Pure Substances
+\\\line(1,0){3}\\
+Problems in class: class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: 5.26, 5.32, 5.48, 5.52 \\
+Extra credit: 5.51
+}
+
+\caltextnext{
+Read through p. 186-199 (\S 5.4)
+\\\line(1,0){3}\\
+Phase Transitions of Mixtures
+\\\line(1,0){3}\\
+Problems in class: class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: 5.35
+}
+
+% MGL extra material
+%\caltextnext{
+%Read provided additional material
+%\\\line(1,0){3}\\
+%Order parameters and critical exponents
+%\\\line(1,0){3}\\
+%Problems in class: class choice!
+%\\\line(1,0){3}\\
+%HW \#\arabic{hw}\stepcounter{hw}:
+%}
+
+\caltextnext{
+Read through p. 200-207, 238-246 (\S 5.5, \S 6.3-6.4)
+\\\line(1,0){3}\\
+Dilute Solutions; Equipartition; Maxwell Speed Distribution
+\\\line(1,0){3}\\
+Problems in class: class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: 5.75, 5.76, 5.82, 6.31, 6.38
+\\ Extra Credit: 5.81, 6.39
+}
+
+\caltextnext{
+Read through p. 247-256 (\S 6.5-6.7)
+\\\line(1,0){3}\\
+Partition Functions, Free Energy and Composite Systems
+      Also catch up
+\\\line(1,0){3}\\
+Problems in class: class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: work on your papers\\
+Extra credit: 6.43, 6.48, 6.53(!)
+}
+
+\caltextnext{
+Read provided additional material
+\\\line(1,0){3}\\
+Student choice: The new fluctuation theorems {\it or} project workday.
+\\\line(1,0){3}\\
+Problems in class: class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}:\\
+Extra credit: Jarzynski problem from Tuckerman.
+}
+
+\caltextnext{
+{\bf Read lab handout} 
+We'll be working through the ``Stretching Deca-alanine'' tutorial from
+the Computational Biophysics folks at UIUC. We'll work through the
+in-class portions in class, but you'll need to read the three emailed
+PDFs ahead of time. %MGL look fro from:me HW 13 to:aislinn to:vadas
+% MGL must set up laptops ahead of time.
+\\\line(1,0){3}\\
+{\bf Lab \#\arabic{lab}\stepcounter{lab}: Simulation of free energy 2}
+\\\line(1,0){3}\\
+Problems in class: lab!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: Finish lab!
+}
+
+\caltextnext{
+Read through p. 257-270 (\S 7.1-7.2)\\
+Class Handout: VariousQMDistributions.PDF
+\\\line(1,0){3}\\
+The Gibbs Factor; Bosons and Fermions
+\\\line(1,0){3}\\
+Problems in class: class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: 7.8, 7.10, 7.11ace, 7.13\\
+Extra Credit: 7.9, 7.13 the rest, 7.18
+}
+
+\caltextnext{
+Read through p. 271-287 (\S 7.3)
+\\\line(1,0){3}\\
+Degenerate Fermi Gases, Density of States
+\\\line(1,0){3}\\
+Problems in class: class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: 7.23fg, 7.41 (i.e. ``how lasers work'')
+\\Extra Credit: 7.22, 7.23abcde, 7.42 (if you do {\it not} do these
+for extra credit, ask Michael for the solutions, as they're required
+for the other problems.)
+}
+
+\caltextnext{
+Read through p. 271-287 (\S 7.3)
+\\\line(1,0){3}\\
+Density of States\\catch up
+\\\line(1,0){3}\\
+Problems in class: class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: work on your papers
+\\Extra credit: 7.33, 7.34, 7.35
+}
+
+
+% MGL: assume blackbody radiation covered in Modern. It's awesome, though!
+%\caltextnext{
+%Read through p. 288-306 (\S 7.4)
+%\\\line(1,0){3}\\
+%Blackbody Radiation
+%\\\line(1,0){3}\\
+%Problems in class: class choice!
+%\\\line(1,0){3}\\
+%HW \#\arabic{hw}\stepcounter{hw}:
+%}
+
+\caltextnext{
+\begin{framed}{\bf Project Workday!}\end{framed}
+}
+
+\caltextnext{
+Read through p. 307-326 (\S 7.5-7.6)
+\\\line(1,0){3}\\
+Debye Theory of Solids; Bose-Einstein Condensation
+\\\line(1,0){3}\\
+Problems in class: class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}: work on your papers
+\\Extra credit: 7.58, 7.60, 7.64
+}
+
+\caltextnext{
+\begin{framed}{\bf PROJECT PRESENTATIONS!}\end{framed}
+}
+
+\caltextnext{
+\begin{framed}{\bf PROJECT PRESENTATIONS!}\end{framed}
+}
+
+\caltextnext{
+Read through p. 
+\\\line(1,0){3}\\
+\  
+\\\line(1,0){3}\\
+Problems in class: class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}:
+}
+
+\caltextnext{
+Read through p. 
+\\\line(1,0){3}\\
+\  
+\\\line(1,0){3}\\
+Problems in class: class choice!
+\\\line(1,0){3}\\
+HW \#\arabic{hw}\stepcounter{hw}:
+}
+
+
+\end{calendar}
+\end{document}
