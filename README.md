@@ -19,9 +19,11 @@ Required supplemental text: Gould and Tobochnik's [Thermal and Statistical Physi
 [GandTComp]: http://www.compadre.org/STP/filingcabinet/share.cfm?UID=10986&FID=21201&code=8E844C06A4 "comPADRE site for Gould and Tobochnik"
 
 
-## Guest Lectures ##
+## Resources ##
 
-### Diffusion ###
+IPython Notebooks and Excel Files from Chapter 2 may be found in [the IntroProbability section](IntroProbability/)
+
+### Various interesting links for your free time ###
 
 Team up with Adam Hoppe again
 
