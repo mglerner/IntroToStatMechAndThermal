@@ -1,7 +1,9 @@
 IntroToStatMechAndThermal
 =========================
 
-Introduction to Statistical Mechanics and Thermal Physics
+Introduction to Statistical Mechanics and Thermal Physics.
+
+Discussion happens on the [Piazza site](http://piazza.com/earlham/spring2015/phys375)
 
 ## Textbook(s) ##
 
@@ -23,6 +25,8 @@ Required supplemental text: Gould and Tobochnik's [Thermal and Statistical Physi
 
 Team up with Adam Hoppe again
 
-### Elastic Network Model/Normal Mode Analysis ###
+## Negative Temperature
 
-Guest lecture from Demian Riccardi
+http://www.quantum-munich.de/media/negative-absolute-temperature/
+
+http://math.ucr.edu/home/baez/physics/ParticleAndNuclear/neg_temperature.html
