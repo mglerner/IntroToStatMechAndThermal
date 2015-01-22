@@ -7,7 +7,7 @@ Discussion happens on the [Piazza site](http://piazza.com/earlham/spring2015/phy
 
 ## Syllabus ##
 
-Find a PDF [here](SyllabusAndFirstDay/375Syllabus.pdf).
+Find a PDF [here](SyllabusAndFirstDay/375Syllabus.pdf) (you may need to click on "View Raw").
 
 ## Textbook(s) ##
 
