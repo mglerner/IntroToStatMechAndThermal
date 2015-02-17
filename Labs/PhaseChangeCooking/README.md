@@ -62,7 +62,7 @@ was both scary due to a bit of smoke and delicious.
 My guess as to the timing of most recipes: (1) people actually like
 the texture when it hasn't fully gone through the phase transition,
 and thus encourage you to eat it quickly before it falls (2) if you
-let it go even a little bit past when the temperature starts to tick
+let it go even a little past when the temperature starts to tick
 up again, things will probably start burning. 
 
 I'm wondering if something like a custard, flan, or creme brulee might
