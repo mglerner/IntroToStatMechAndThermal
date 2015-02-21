@@ -27,6 +27,8 @@ Required supplemental text: Gould and Tobochnik's [Thermal and Statistical Physi
 
 IPython Notebooks and Excel Files from Chapter 2 may be found in [the IntroProbability section](IntroProbability/)
 
+Monte Carlo introduction and our start at Ising models may be found in the [Chapter 8](Chapter8/) and [Other Monte Carlo](OtherMonteCarlo/) sections.
+
 ### Various interesting links for your free time ###
 
 Team up with Adam Hoppe again
