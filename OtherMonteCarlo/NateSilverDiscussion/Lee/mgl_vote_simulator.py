@@ -13,8 +13,6 @@ then summing them.
 MOE = stdev * 2
 """
 
-from __future__ import division
-
 import numpy as np
 from numpy import array,random,zeros,hstack
 from numpy.random import normal
@@ -24,7 +22,7 @@ import polling_data, ec_votes
 
 # For efficiency, let's fix some orders
 
-STATE_NAMES = array(polling_data.States.keys())
+STATE_NAMES = array(list(polling_data.States.keys()))
 SHORT_STATE_NAMES = array([ec_votes.Electoral_College[state][0] for state in STATE_NAMES])
 EC_VOTES = array([ec_votes.Electoral_College[state][1] for state in STATE_NAMES])
 
@@ -53,7 +51,6 @@ def nation_vote(trials,falloff=10,reverse=False):
     R = DRM_PROBS[:,1]
     MOE = DRM_PROBS[:,2]
     STD = MOE/2
-    
     results = array([nation_vote_once(D,R,STD) for i in range(trials)])
 
     dem = results[:,0]
@@ -61,7 +58,7 @@ def nation_vote(trials,falloff=10,reverse=False):
     ec_dem = results[:,2]
 
     dem_win_pct = sum(ec_dem > 270) / len(ec_dem)
-    print dem_win_pct
+    print(dem_win_pct)
     bin_edges = range(538)
     frequencies,bin_edges = np.histogram(ec_dem,bins=bin_edges)
 
@@ -80,17 +77,17 @@ def nation_vote(trials,falloff=10,reverse=False):
 
     # Competitive states are states where the spread is greater than the MOE.
     competitive = abs(D - R) < 2*MOE
-    print "Competitive states",SHORT_STATE_NAMES[competitive]
+    print("Competitive states",SHORT_STATE_NAMES[competitive])
     dem_win_paths = ['-'.join(SHORT_STATE_NAMES[(d > r)*competitive]) for (d,r) in zip(dem,rep)]
     rep_win_paths = ['-'.join(SHORT_STATE_NAMES[(d < r)*competitive]) for (d,r) in zip(dem,rep)]
 
     dc = Counter(dem_win_paths)
     rc = Counter(rep_win_paths)
-    print "Most common Dem win paths"
+    print("Most common Dem win paths")
     for (win_path,count) in dc.most_common(10):
-        print win_path
-    print "Most common Rep win paths"
+        print(win_path)
+    print("Most common Rep win paths")
     for (win_path,count) in rc.most_common(10):
-        print win_path
+        print(win_path)
     
 
