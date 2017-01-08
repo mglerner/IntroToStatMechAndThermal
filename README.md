@@ -3,7 +3,7 @@ IntroToStatMechAndThermal
 
 Introduction to Statistical Mechanics and Thermal Physics.
 
-Discussion happens on the [Piazza site](http://piazza.com/earlham/spring2015/phys375)
+Discussion happens on the [Piazza site](http://piazza.com/earlham/spring2017/phys375)
 
 ## Syllabus ##
 
