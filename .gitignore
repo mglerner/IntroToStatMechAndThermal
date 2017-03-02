@@ -1,5 +1,11 @@
 # Private directory
-Private
+Private/
+
+# Emacs backups
+*~
+
+# Mac Specific
+.DS_Store/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
