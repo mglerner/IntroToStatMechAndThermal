@@ -40,3 +40,7 @@ Team up with Adam Hoppe again
 http://www.quantum-munich.de/media/negative-absolute-temperature/
 
 http://math.ucr.edu/home/baez/physics/ParticleAndNuclear/neg_temperature.html
+
+## Diffusion
+
+https://teachphyschem.blogspot.ca/2016/11/a-molecular-simulation-exercise-on.html

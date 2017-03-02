@@ -4,6 +4,9 @@ Private/
 # Emacs backups
 *~
 
+# TeX
+*.aux
+
 # Mac Specific
 .DS_Store/
 .DS_Store
