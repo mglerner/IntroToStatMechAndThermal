@@ -70,6 +70,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[table]{xcolor}
 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+  }
+
+\usepackage{float}
+\restylefloat{table}
+
 \pagestyle{empty}
 
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
@@ -88,15 +99,18 @@
 \vskip.15in 
 \noindent\textbf{Instructor:} Michael Lerner,  CST 213, Phone: 727-LERNERM
 \vskip.15in
-\noindent\textbf{Office Hours:} M 9-11, $\Theta$ 9:00-11:00, 2:00-4:00 and by  appointment. %I also have an open-door policy, and you're
+\noindent\textbf{Office Hours:} MWF 9-10 and 11-12, T$\Theta$ 9:00-11:00, 14:00-15:00 and by  appointment. %I also have an open-door policy, and you're
 %encouraged to stop in to ask questions whenever my door is open. That's
 %most of the time.
 
 \vskip.15in 
-\noindent\textbf{Where:} All meetings take place on Zoom: https://us02web.zoom.us/j/88190538447
+\noindent\textbf{When and where:} Synchronous class meetings will be MWF 10:00-11:00 and T$\Theta$ 13:00-14:00. All meetings take place on Zoom: \url{https://us02web.zoom.us/j/88190538447}
 
 \vskip.15in 
-\noindent\textbf{Credits:} This is a four-credit course. In normal times, this is fulfilled via four hours of in-person instruction per week over a 15-week semester. During a pandemic, we'll have three hours per week of synchronous instruction, three hours per week of recorded lectures, and several hours per week of interactions via online discussion forums.
+\noindent\textbf{Credits:} This is a four-credit course. In normal times, this is fulfilled via four hours of in-person instruction per week over a 15-week semester. During a pandemic, we'll have three hours per week of synchronous textbook-based instruction, two hours per week of synchronous project time, two hours per week of project work, and several hours per week of interactions via online discussion.
+
+\vskip.15in 
+\noindent\textbf{COVID:} Campus-wide coronavirus policies and information: \url{https://earlham.edu/coronavirus}
 
 
 \vskip.15in 
@@ -110,8 +124,13 @@
 \end{itemize}
 \item[Required Textbook:] Schroeder, \textbf{Thermal Physics} It's extremely readable, and has a good selection of
 real-world problems.
-\item[Required Online Forums:] Moodle, and  piazza.com/earlham/spring2021/phys375 
-real-world problems.
+\item[Required Software] You'll need a spreadsheet program (either
+  Excel or Google Sheets) and \textbf{The Anaconda Python
+    Distribution} (\url{http://continuum.io/downloads}. We'll do several computational exercises throughout
+  the class. If you have a laptop, please install the Anaconda Python
+  Distribution. If you do not have a laptop, please contact me ASAP.
+
+\item[Required Online Forums:] Moodle, and \url{piazza.com/earlham/spring2021/phys375}
 \item[Prerequisite] Physics 345, modern physics.
   \vskip.15in 
 \item[Communication:] My preferred mode of communication is email. I will check my email multiple times per day during the work week. If you have sent me an email and have not heard back from me within 24 hours (excluding weekends), you should email me again or drop by my office to ask your question in person. I cannot guarantee that I will regularly check my email on evenings or on weekends.
@@ -119,20 +138,10 @@ real-world problems.
   I expect that you will check your Earlham email at least once per day. That is, 24 hours after sending an email to the class, it is my expectation that all of you will have read that email. Emailed assignments, due dates, policy changes, and other course information carry the same weight as information contained in the syllabus.
 
   Information relevant to the course will also be posted to the Moodle page. You are responsible for checking Moodle at the same frequency and with the same conditions applied to email communication.
-\pagebreak
-\item[Grading Policy]
+
+\item[Grading Policy:]
   Your grade in this class will be determined by a weighted combination of your scores from multiple categories. Within each category, each assignment is weighted equally. It is extremely hard to catch up on late work in normal times (usually things are late because students are busy, and people don't tend to get less busy!). This is especially true in a pandemic. So, rather than accept late work, I will drop a roughly a week worth of your lowest grades from most categories. If you have to turn things in late, my strong suggestion is that you prioritize getting your schedule back under control. Feel free to simply \textit{not do} things that will not be graded. Especially if it helps you keep the rest of your life under control.
 
-\item[Extra Credit]
-  Throughout the course, several homework problems are explicitly marked as extra credit. The other opportunities are listed here. Extra credit will not be included in grade updates, but will be included when I calculate your final grade in the course.
-  \begin{itemize}
-  \item 0.5\% extra credit for visiting me in my office hours in the first two weeks of class.
-  \item 0.5\% extra credit to the whole class if the entire class completes their course evaluations.
-  \item 0.1\% extra credit for the first person to point out any significant errors on tests or any assignment, up to a maximum of 1.0\%.\ (Spelling errors and similar mistakes do not count as significant errors unless they significantly impede your ability to do the assignment) 
-    \end{itemize}
-
-
-  
 %%\begin{itemize}
 %%  \item Attendance/preparation/participation (including Piazza): 15\%
 %%  \item Daily homework, 20\%
@@ -149,7 +158,7 @@ real-world problems.
 \setlength{\tabcolsep}{8pt}
 %\renewcommand{\arraystretch}{2.5}
 {\rowcolors{2}{green!80!yellow!50}{green!70!yellow!40}
-\begin{table}[]
+\begin{table}[H]
 %\caption{Grading Breakdown}
 \label{tab:my-table}
 \begin{tabular}{llll}
@@ -164,6 +173,17 @@ real-world problems.
 \end{tabular}
 \end{table}
 }
+
+\item[Academic Accommodations:] {\small \url{http://www.earlham.edu/curriculum-guide/academic-integrity/}}
+ Students with a documented disability (e.g., physical, learning, psychiatric, visual, hearing, etc.) who need to arrange reasonable classroom accommodations must request accommodation memos from the Academic Enrichment Center(main floor of Lilly Library) and contact their instructors each semester. For greater success, students are strongly encouraged to visit the Academic Enrichment Center within the first two weeks of each semester to begin the process.
+  
+\item[Extra Credit:]
+  Throughout the course, several homework problems are explicitly marked as extra credit. The other opportunities are listed here. Extra credit will not be included in grade updates, but will be included when I calculate your final grade in the course.
+  \begin{itemize}
+  \item 0.5\% extra credit for visiting me in my office hours in the first two weeks of class.
+  \item 0.5\% extra credit to the whole class if the entire class completes their course evaluations.
+  \item 0.1\% extra credit for the first person to point out any significant errors on tests or any assignment, up to a maximum of 1.0\%.\ (Spelling errors and similar mistakes do not count as significant errors unless they significantly impede your ability to do the assignment) 
+    \end{itemize}
 
   
 \item[Attendance/preparation/participation (including Piazza):] Especially in a pandemic, attendance is (1) critical (2) sometimes hard to sustain. Attendance involves attending the synchronous Zoom lectures and watching the pre-recorded videos. During class, we will work on problems together and via groups in breakout rooms. This problem solving is a critical component of the class, and it is the main reason attendance is required. We all know that circumstances sometimes make it hard or impossible to attend, so I will drop your three lowest attendance and participation grades.
@@ -189,7 +209,7 @@ real-world problems.
 
     These assignments will be graded for effort and completion. If you show up to the meeting with your group, give your best effort, and are able to complete the problems, then you should receive full credit.
 
-    Each week, one group work assignment will be posted on Monday and will be due by the start of class on Friday, and the second group work assignment will be posted on Wednesday and will be due by the start of class the following Monday. Though you are expected to work together on the problems, each of you is responsible for submitting your own solution as a PDF on Moodle. Some level of similarity between submissions is allowed because these are group assignments, but you are not allowed to submit the same file for all three of you. In short, work together to determine the correct approach, then you each write your own solution
+    Each week, one group work assignment will be posted on Monday and will be due by the start of class on Friday, and the second group work assignment will be posted on Wednesday and will be due by the start of class the following Monday. Though you are expected to work together on the problems, each of you is responsible for submitting your own solution as a PDF on Moodle. Some level of similarity between submissions is allowed because these are group assignments, but you are not allowed to submit the same file for all group members. In short, work together to determine the correct approach, then you each write your own solution
 
     \item[Independent project:]The applications of modern
 statistical mechanics are so broad that we cannot hope to cover even a
@@ -203,33 +223,33 @@ at that point. Sethna's book provides a wealth of such problems, and
 I'm certainly available to provide background material that you may be
 missing if needed.
 
-The times of 13:00-14:00 on Tuesdays and Thursdays are reserved for project time. I will introduce the project during this time slot on Thursday of Week 1, and we'll discuss the assighment in more detail at that point. For weeks 2-6, each of you will have a 30-minute appointment with me once a week during this time slot to discuss your progress and any questions you have in a one-on-one environment. During Week 7, each of you will make a presentation about your project to the rest of the class, and attending the presentations of other students is part of your grade on the project.
+The times of 13:00-14:00 on Tuesdays and Thursdays are reserved for project time. I will introduce the project during this time slot on Thursday of Week 1, and we'll discuss the assignment in more detail at that point. For weeks 2-6, each of you will have a 30-minute appointment with me once a week during this time slot to discuss your progress and any questions you have in a one-on-one environment. During Week 7, each of you will make a presentation about your project to the rest of the class, and attending the presentations of other students is part of your grade on the project.
 
-Two rough drafts of your project will be due, \textbf{and the rough drafts will be worth 5\% of your course grade}. Given the timing of the course, the first rough draft is allowed to be quite rough, but serves to ensure that you're making good progress, have some things written down, and know what you need to do to succeed.
+Two rough drafts of your project will be due. Given the timing of the course, the first rough draft is allowed to be quite rough, but serves to ensure that you're making good progress, have some things written down, and know what you need to do to succeed.
 
 Topics are largely at your discretion, but may include
-
+\vspace{-0.05in}
+{\small
 \begin{itemize}
-  \item Information Theory and Statistical Mechanics
-  \item Foundations of the Zeroth and Second ``Laws'' of
-    thermodynamics
+\item Information Theory and Statistical Mechanics
+  \item Biophysical applications (protein dynamics, diffusion, etc.)
+  \item Foundations of the Zeroth and Second ``Laws'' of thermodynamics
   \item Coarsening
   \item Time correlation functions
-   \item Annealing
+  \item Annealing
   \item Statistical Mechanics/Thermodynamics of small systems
   \item Further work with Monte Carlo simulations
   \item Thermal ratchets, theory and practice
-  \item Order parameters and critical exponents (often an in-class
-    topic!, see Sethna)
-    \item Anything in Schroeder that we do not cover
-    \end{itemize}
-
+  \item Order parameters and critical exponents (often an in-class topic!, see Sethna)
+  \item Anything in Schroeder that we do not cover
+  \end{itemize}
+}
     \item[Final Exam:] The weekly assignments serve effectively as small-stakes quizzes/exams, and the final exam will be our only pure test in the class. We will have a clear discussion and review of topics before the exam.
 
 %\item[Attendance Policy:] Students are expected to attend classes regularly. A student who incurs an excessive
 %number of absences may have some or all of the class preparation/participation grade (10\%) deducted at the discretion of the instructor.
 %\item[Piazza:]  piazza.com/earlham/spring2021/phys375 
-    \item[Academic Integrity:] {\small http://www.earlham.edu/policies-and-handbooks/community/student-code-of-conduct/}
+    \item[Academic Integrity:] {\small http://www.earlham.edu/curriculum-guide/academic-integrity/} As with all Earlham courses, this course is covered by the academic integrity policy. Much of the work in this class is group-based, but not all of it. Specific expectations are discussed in class and in this syllabus, but: daily and weekly problems should be attempted individually first. You may then ask for guidance in class and in the forums. Your final solution should be written individually. Group collaboration is expected from the beginning with the group problems, and more similarity is expected between submissions.
 
       \item[Workload Expectations:] Under the condensed schedule Earlham is currently using, workload expectations for each 4-credit class are at least 20 hours per week per class, including time spent in lecture. Each week, you will spend about 6 hours in lecture (synchronous and asynchronous), 2 hours on group work assignments, 3 hours on daily homework assignments, 3 hours on weekly homework assignments, 3 hours on your independent project, and 3 hours reading the textbok.
 
@@ -357,12 +377,6 @@ subject matter'' but difficult to learn from on your own at the
 advanced undergraduate level. The plan is to supplement Schroeder with
 bits and pieces of Sethna. Please start pawing through Sethna ASAP so
 that you can pick out interesting topics that we may use. \hfill \\
-\item[Required Software] \hfill\\
-\textbf{The Anaconda Python Distribution}
-We'll do several computational exercises throughout the class. If you
-have a laptop, please install the Anaconda Python Distribution. If you do not
-have a laptop, please contact me ASAP. 
-http://continuum.io/downloads
 \item[Recommended Textbooks] \hfill \\
 \textbf{Kusse and Westwig, Mathematical Physics}
 This text is extremely well written. It's a good reference for the
@@ -420,7 +434,7 @@ at least two of these as group projects.
   and qualitative measurements of the entropy involved of unknotting.
 \end{description}
 
-The entropy of unkotting is a self-directed lab. %You may begin it at
+%The entropy of unkotting is a self-directed lab. %You may begin it at
 %any point after spring break.
 
 
