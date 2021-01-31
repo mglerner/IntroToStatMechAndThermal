@@ -1,9 +1,11 @@
 IntroToStatMechAndThermal
 =========================
 
-Introduction to Statistical Mechanics and Thermal Physics.
+Introduction to Statistical Mechanics and Thermal Physics. During a
+pandemic.
 
-Discussion happens on the [Piazza site](http://piazza.com/earlham/spring2017/phys375)
+Discussion happens on the
+[Piazza site](http://piazza.com/earlham/spring2017/phys375) **TODO: Update**
 
 ## Syllabus ##
 
@@ -33,7 +35,7 @@ The first homework for March Madness Monte Carlo may be found [here](http://nbvi
 
 ### Various interesting links for your free time ###
 
-Team up with Adam Hoppe again
+Team up with Adam Hoppe, Chris Kelly, or Jeff Knight again
 
 ## Negative Temperature
 
