@@ -6,6 +6,7 @@ Private/
 
 # TeX
 *.aux
+*.synctex.gz
 
 # Mac Specific
 .DS_Store/
