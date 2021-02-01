@@ -69,6 +69,7 @@
 \input{macros}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[table]{xcolor}
+\usepackage{multirow}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -511,9 +512,9 @@ to be a lot of work, and an enormous amount of fun.
 \begin{tabular}{p{.03\linewidth}|p{.065\linewidth}|p{.065\linewidth}|p{0.4\linewidth}|p{.08\linewidth}|p{.085\linewidth}|p{.1\linewidth}}
 \textbf{Wk} & \textbf{Date}    & \textbf{Read}        & \textbf{Topics} & \textbf{In-class probs} & \textbf{Due}    & \textbf{Project time}  \\ \hline 
 1    & Feb 1  & 1.1-1.4        & What is Statistical Physics? Equilibrium; ideal gas; equipartition; heat and work  & 4, 14, 18                           & n/a          & n/a           \\
-1    & Feb 3  & 1.5-1.7        & Compressive work; Heat capacities; Rates                               & 37, 45                                & D1           & n/a           \\
+1    & Feb 3  & 1.5-1.6        & Compressive work; Heat capacities; Rates                               & 37, 45                                & D1           & n/a           \\
 1    & Feb 5  & 2.1-2.3        & Two-State Systems; Einstein model of a solid; Interacting systems                   &                                           & D2, G1       & Intro \\ \hline
-2    & Feb 8  & 2.4-2.5        & Large Systems; Ideal Gas                                                            &  16 & D3, G2, W1   & Proposals     \\
+2    & Feb 8  & 2.4-2.5        & Large Systems; Ideal Gas                                                            &  16 & D3, G2, W1   & \multirow{2}{*}{Proposals}     \\
 2    & Feb 10 & 2.6, 3.1       & ENTROPY!; Temperature                                                               &                                           & D4           & Proposals     \\
 2    & Feb 12 & 3.2, 3.3       & Entropy and Heat; Paramagnetism                                                     &                                           & D5, G3       & Proposals     \\ \hline
 3    & Feb 15 & 3.4, 3.5, 3.6  & Mechanical Equilibrium and Pressure; Diffusive Equilibrium and Chemical Potential   &                                           & D6, G4, W2   & Check-in 1    \\
@@ -536,6 +537,42 @@ to be a lot of work, and an enormous amount of fun.
 \end{table}
 }
 \newpage
+
+
+
+\setlength{\arrayrulewidth}{.4mm}
+\setlength{\tabcolsep}{8pt}
+{\rowcolors{2}{green!80!yellow!50}{green!70!yellow!40}
+  \begin{table}[]
+    \footnotesize
+\caption{\footnotesize{Course Assignments. Due dates in parentheses}}
+\label{tab:course-assignments}
+%\begin{tabular}{p{.03\linewidth}|p{.065\linewidth}|p{0.065\linewidth}|p{0.065\linewidth}|p{0.4\linewidth}|p{0.064\linewidth}}
+\begin{tabular}{p{0.03\linewidth}|p{0.08\linewidth}|p{0.065\linewidth}|p{0.25\linewidth}|p{0.25\linewidth}|p{0.2\linewidth}}
+\textbf{Wk} & \textbf{Assigned} & \textbf{Read}           & \textbf{Daily (3x 1hr)}            & \textbf{Weekly (1x 3 hr)}                                       & \textbf{Group (2x 1 hr)}    \\
+1  & Feb 1    & 1.1-1.4        & (\textbf{Due}: Feb 3) 1.7a, 1.8    & (\textbf{Due}: Feb 8) 1.16, 1.20, 1.22 (a,b,c,e - give radius), 1.36 & (\textbf{Due}: Feb 5) 1.17       \\
+1  & Feb 3    & 1.5-1.6        & (\textbf{Due}: Feb 5) 1.31, 1.43        &                                                        & (\textbf{Due}: Feb 8) 1.34       \\
+1  & Feb 5    & 2.1-2.3        & (\textbf{Due}: Feb 8) 2.5, 2.6          &                                                        &                    \\
+2  & Feb 8    & 2.4-2.5        & (\textbf{Due}: Feb 10) 2.16, 2.18, 2.21 & (\textbf{Due}: Feb 15) 2.4, 2.11, 2.17, 2.37                         & (\textbf{Due}: Feb 12) 2.8, 2.19 \\
+2  & Feb 10   & 2.6, 3.1       & (\textbf{Due}: Feb 12) 2.29, 2.31, 2.35 &                                                        & (\textbf{Due}: Feb 15) 2.33      \\
+2  & Feb 12   & 3.2, 3.3       & (\textbf{Due}: Feb 15) 2.38, 3.3, 3.13  &                                                        &                    \\
+3  & Feb 15   & 3.4-3.6        &                           & (\textbf{Due}: Feb 22) 3.6,                                          & (\textbf{Due}: Feb 17) 3.14      \\
+3  & Feb 17   & 6.1-6.2        &                           &                                                        & (\textbf{Due}: Feb 19)           \\
+3  & Feb 19   & 8.2, Ising.pdf &                           &                                                        &                    \\
+4  & Feb 22   & 4.1-4.4        &                           &                                                        &                    \\
+4  & Feb 24   & 1.7            &                           &                                                        &                    \\
+4  & Feb 26   & 5.1-5.2        &                           &                                                        &                    \\
+5  & Mar 1    & 5.3            &                           &                                                        &                    \\
+5  & Mar 3    & 5.4            &                           &                                                        &                    \\
+5  & Mar 5    & 5.5            &                           &                                                        &                    \\
+6  & Mar 8    & 6.3-6.4        &                           &                                                        &                    \\
+6  & Mar 10   & 6.5-6.7        &                           &                                                        &                    \\
+6  & Mar 12   & PDFs           &                           &                                                        &                    \\
+7  & Mar 15   & 7.1-7.2        &                           &                                                        &                    \\
+7  & Mar 17   & 7.3            &                           &                                                        &                    \\
+7  & Mar 19   & 7.5-7.6        &                           &                                                        &                   \end{tabular}
+\end{table}
+}
 %%%%\vskip.25in\noindent\textbf{Daily Schedule}
 %%%\newcounter{hw}
 %%%\setcounter{hw}{1}
